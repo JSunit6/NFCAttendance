@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rellayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.studio.sds.nfcapp.ViewAttendance">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/take_attendance_date"
+        android:id="@+id/txtViewDateLabel"
+        android:textSize="15dp"
+        android:layout_marginTop="08dp"
+        android:textColor="@color/colorAccent"
+        />
+    <AutoCompleteTextView
+        android:id="@+id/txtviewDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/take_attendance_date"
+        android:inputType="date"
+        android:maxLines="1"
+        android:layout_marginTop="25dp"
+        android:singleLine="true"
+        android:enabled="false"
+        android:textColor="#000000"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/btnselectdate"
+        android:layout_alignBottom="@+id/txtviewDate"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/take_attendance_class"
+        android:id="@+id/textViewClass"
+        android:textSize="15dp"
+        android:layout_below="@+id/txtviewDate"
+
+        android:textColor="@color/colorAccent"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerClassView"
+        android:entries="@array/classentries_array"
+        android:layout_marginTop="08dp"
+        android:layout_below="@+id/textViewClass"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/take_attendance_sub"
+        android:id="@+id/textViewSub"
+        android:textSize="15dp"
+        android:layout_below="@+id/spinnerClassView"
+        android:textColor="@color/colorAccent"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerSubView"
+        android:layout_marginTop="08dp"
+        android:layout_below="@+id/textViewSub"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Info"
+        android:layout_marginRight="0dp"
+        android:id="@+id/btnViewInfo"
+        android:layout_marginTop="82dp"
+        android:layout_below="@+id/spinnerClassView"
+        android:layout_centerHorizontal="true" />
+
+    <FrameLayout
+        android:id="@+id/datePickerFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" >
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePickerView"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            style="@style/Animation.AppCompat.Dialog"
+            android:layout_above="@+id/rellayout"
+            android:visibility="visible"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabaddDate"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:layout_marginRight="50dp"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:src="@drawable/ic_done"
+            />
+
+    </FrameLayout>
+
+
+
+
+</RelativeLayout>
